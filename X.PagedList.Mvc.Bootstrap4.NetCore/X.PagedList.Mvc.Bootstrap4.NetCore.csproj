@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>7.9.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.9.1" />
+  </ItemGroup>
+
+</Project>
