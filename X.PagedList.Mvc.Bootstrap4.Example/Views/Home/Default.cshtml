@@ -13,6 +13,8 @@
 
 <hr />
 
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Default", new { page }), Bootstrap4PagedListRenderOptions.Default)
+
 <table class="table table-hover table-striped">
     <tr>
         <th>OrderId</th>
