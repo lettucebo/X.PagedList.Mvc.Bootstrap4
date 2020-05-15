@@ -50,6 +50,13 @@ steps:
     command: pack
     packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
 
+- task: NuGetCommand@2
+  displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core  Symbol'
+  inputs:
+    command: pack
+    packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
+    arguments: '-Symbols -SymbolPackageFormat snupkg'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
