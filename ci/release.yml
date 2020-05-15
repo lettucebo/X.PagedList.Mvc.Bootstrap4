@@ -5,11 +5,11 @@
 
 trigger:
   branches:
-      include:
-      - '*'
+    include:
+      - refs/tags/*
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
