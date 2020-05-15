@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj" />
-    <ProjectReference Include="..\X.PagedList.Mvc.Bootstrap4.NetCore\X.PagedList.Mvc.Bootstrap4.Core.csproj" />
     <ProjectReference Include="..\X.PagedList.Mvc.Bootstrap4.SampleData\X.PagedList.Mvc.Bootstrap4.SampleData.csproj" />
   </ItemGroup>
 
