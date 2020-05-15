@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29311.281
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.PagedList.Mvc.Bootstrap4", "X.PagedList.Mvc.Bootstrap4\X.PagedList.Mvc.Bootstrap4.csproj", "{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{E73AF103-8674-4667-A5B8-3A7788A0CC49}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.PagedList.Mvc.Bootstrap4.Example", "X.PagedList.Mvc.Bootstrap4.Example\X.PagedList.Mvc.Bootstrap4.Example.csproj", "{101ED755-21FE-4928-88EE-FAFC624B8641}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X.PagedList.Mvc.Bootstrap4.SampleData", "X.PagedList.Mvc.Bootstrap4.SampleData\X.PagedList.Mvc.Bootstrap4.SampleData.csproj", "{25B9B3DF-9E91-498B-8330-725F070E6278}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X.PagedList.Mvc.Bootstrap4.NetCore", "X.PagedList.Mvc.Bootstrap4.NetCore\X.PagedList.Mvc.Bootstrap4.NetCore.csproj", "{1BD3C448-0CBD-4562-8942-B423A1452838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X.PagedList.Mvc.Bootstrap4.Core", "X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj", "{1BD3C448-0CBD-4562-8942-B423A1452838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X.PagedList.Mvc.Bootstrap4.Core.Example", "X.PagedList.Mvc.Bootstrap4.Core.Example\X.PagedList.Mvc.Bootstrap4.Core.Example.csproj", "{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Fs|Any CPU.ActiveCfg = Fs|Any CPU
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Fs|Any CPU.Build.0 = Fs|Any CPU
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E1AFCA4-2319-4A5F-AA65-318E4D78359B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Fs|Any CPU.ActiveCfg = Release|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Fs|Any CPU.Build.0 = Release|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{101ED755-21FE-4928-88EE-FAFC624B8641}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25B9B3DF-9E91-498B-8330-725F070E6278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25B9B3DF-9E91-498B-8330-725F070E6278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25B9B3DF-9E91-498B-8330-725F070E6278}.Fs|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,12 +30,18 @@ Global
 		{1BD3C448-0CBD-4562-8942-B423A1452838}.Fs|Any CPU.Build.0 = Debug|Any CPU
 		{1BD3C448-0CBD-4562-8942-B423A1452838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD3C448-0CBD-4562-8942-B423A1452838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Fs|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Fs|Any CPU.Build.0 = Debug|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{101ED755-21FE-4928-88EE-FAFC624B8641} = {E73AF103-8674-4667-A5B8-3A7788A0CC49}
+		{1F3712C2-4576-478C-9D9F-1B5FC9E6CE0B} = {E73AF103-8674-4667-A5B8-3A7788A0CC49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B130DA09-F293-4CDD-897D-F44F8461FF50}

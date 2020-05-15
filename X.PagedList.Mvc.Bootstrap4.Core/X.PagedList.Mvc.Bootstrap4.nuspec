@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>X.PagedList.Mvc.Bootstrap4</id>
+        <version>$version$</version>
+        <authors>$authors$</authors>
+        <owners>$authors$</owners>
+        <description>$description$</description>
+        <projectUrl>$PackageProjectUrl$</projectUrl>
+        <iconUrl>$PackageIconUrl$</iconUrl>
+        <dependencies>
+            <group targetFramework=".NETStandard2.0">
+                <dependency id="X.PagedList.Mvc.Core" version="8.0.7" />
+            </group>
+        </dependencies>
+    </metadata>
+</package>
