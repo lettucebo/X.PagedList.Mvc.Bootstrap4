@@ -49,3 +49,9 @@ steps:
   inputs:
     command: pack
     packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
