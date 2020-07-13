@@ -12,7 +12,8 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
                 PageClasses = new[] { "page-link" },
 
                 // Due to no way change Ellipses element class, try setting EllipsesElementClass but fail, so disable Ellipses
-                DisplayEllipsesWhenNotShowingAllPageNumbers = false
+                DisplayEllipsesWhenNotShowingAllPageNumbers = false,
+                Display = PagedListDisplayMode.IfNeeded
             };
             return option;
         }
