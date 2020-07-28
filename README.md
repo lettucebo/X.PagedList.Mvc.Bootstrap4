@@ -24,7 +24,7 @@ Then it's done.
 ## Custom
 You can also custom your own setting base on Bootstrap4PagedListRenderOptions
 
-Please see: HomeController.Cutsom
+Please see: [HomeController.Cutsom](https://github.com/lettucebo/X.PagedList.Mvc.Bootstrap4/blob/master/src/X.PagedList.Mvc.Bootstrap4.Core.Example/Views/Home/Custom.cshtml)
 
 ## Type
 - Minimal
