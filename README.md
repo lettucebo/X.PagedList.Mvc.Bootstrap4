@@ -21,6 +21,11 @@ Then at cshtml pager:
 
 Then it's done.
 
+## Custom
+You can also custom your own setting base on Bootstrap4PagedListRenderOptions
+
+Please see: HomeController.Cutsom
+
 ## Type
 - Minimal
 - PageNumbersOnly
