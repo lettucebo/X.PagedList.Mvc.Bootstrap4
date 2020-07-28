@@ -1,9 +1,20 @@
-﻿using X.PagedList.Web.Common;
+﻿using System.Runtime.CompilerServices;
+using X.PagedList.Web.Common;
 
 namespace X.PagedList.Mvc.Bootstrap4.Core
 {
     public class Bootstrap4PagedListRenderOptions : PagedListRenderOptionsBase
     {
+
+        public Bootstrap4PagedListRenderOptions()
+        {
+            LiElementClasses = new[] { "page-item" };
+            PageClasses = new[] { "page-link" };
+
+            // Due to no way change Ellipses element class, try setting EllipsesElementClass but fail, so disable Ellipses
+            DisplayEllipsesWhenNotShowingAllPageNumbers = false;
+        }
+
         private static PagedListRenderOptionsBase GetCommonSetting()
         {
             var option = new PagedListRenderOptionsBase()
