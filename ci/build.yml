@@ -52,7 +52,7 @@ steps:
     nobuild: true
     includesymbols: true
     versioningScheme: 'off'
-    buildProperties: '-p:NuspecFile=**/*.nuspec'
+    buildProperties: '-p:NuspecFile=$(System.DefaultWorkingDirector)/**/*.nuspec'
 
 - task: PublishBuildArtifacts@1
   inputs:
