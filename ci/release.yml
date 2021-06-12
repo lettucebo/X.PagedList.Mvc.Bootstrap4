@@ -16,50 +16,66 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
 
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: '3.1.202'
+stages:
+  - stage: Build
+    displayName: Build nuget package
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: 'windows-latest'
 
-- task: DotNetCoreCLI@2
-  displayName: Restore
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
+        steps:
+          - task: DotNetCoreCLI@2
+            displayName: Restore
+            inputs:
+              command: 'restore'
+              projects: '**/*.csproj'
 
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
+          - task: DotNetCoreCLI@2
+            displayName: Build
+            inputs:
+              command: 'build'
+              projects: '**/*.csproj'
+              arguments: '--configuration $(BuildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  displayName: Test
-  inputs:
-    command: test
-    projects: '**/*[Tt]est/*.csproj'
-    arguments: '--configuration $(BuildConfiguration) --no-restore'
+          - task: NuGetCommand@2
+            displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
+            inputs:
+              command: 'pack'
+              packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
+              includeSymbols: true
 
-- task: NuGetCommand@2
-  displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
-  inputs:
-    command: 'pack'
-    packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
-    includeSymbols: true
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
 
-# - task: NuGetCommand@2
-#   displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core  Symbol'
-#   inputs:
-#     command: pack
-#     packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
-#     arguments: '-Symbols -SymbolPackageFormat snupkg'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+  - stage: Deploy
+    displayName: Deploy stage
+    dependsOn: Build
+    condition: succeeded()
+    jobs:
+      - deployment: Deploy
+        displayName: Deploy To Nuget.org
+        environment: 'production'
+        pool:
+          vmImage: 'windows-latest'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: DownloadBuildArtifacts@0
+                  inputs:
+                    buildType: 'current'
+                    downloadType: 'single'
+                    artifactName: 'drop'
+                    downloadPath: '$(System.ArtifactsDirectory)'
+                - task: NuGetCommand@2
+                  inputs:
+                    command: 'push'
+                    packagesToPush: '$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg'
+                    nuGetFeedType: 'external'
+                    publishFeedCredentials: 'Nuget.org'
