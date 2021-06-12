@@ -44,16 +44,15 @@ steps:
     projects: '**/*[Tt]est/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-restore'
 
-- task: NuGetToolInstaller@1
-  inputs:
-    versionSpec: '5.9.1'
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
+- task: DotNetCoreCLI@2
+  displayName: Pack
   inputs:
     command: 'pack'
-    packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
-    includeSymbols: true
+    packagesToPack: '**/*.csproj'
+    nobuild: true
+    includesymbols: true
+    versioningScheme: 'off'
+    buildProperties: '-p:NuspecFile=**/*.nuspec'
 
 - task: PublishBuildArtifacts@1
   inputs:
