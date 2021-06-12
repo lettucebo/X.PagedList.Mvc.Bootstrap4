@@ -43,3 +43,20 @@ steps:
     command: test
     projects: '**/*[Tt]est/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-restore'
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '5.9.1'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
+  inputs:
+    command: 'pack'
+    packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
+    includeSymbols: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
