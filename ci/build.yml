@@ -17,6 +17,14 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'lettucebo'
+    scannerMode: 'MSBuild'
+    projectKey: 'X.PagedList.Mvc.Bootstrap4'
+    projectName: 'X.PagedList.Mvc.Bootstrap4'
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
@@ -36,3 +44,9 @@ steps:
     command: test
     projects: '**/*[Tt]est/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-restore'
+
+- task: SonarCloudAnalyze@1
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
