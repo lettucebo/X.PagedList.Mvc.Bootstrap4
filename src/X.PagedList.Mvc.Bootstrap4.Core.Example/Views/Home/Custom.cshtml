@@ -3,7 +3,6 @@
 @using X.PagedList.Mvc.Bootstrap4.Core
 @using X.PagedList.Mvc.Core
 @using X.PagedList.Web.Common
-@using Microsoft.AspNetCore.Http
 @{
 }
 
@@ -11,7 +10,7 @@
 
 <hr />
 
-@Html.Partial("_LinkPartial")
+@await Html.PartialAsync("_LinkPartial")
 
 <hr />
 
@@ -22,7 +21,7 @@
     </form>
 </div>
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Custom", new { page, name = Context.Request.Query["name"] }), new Bootstrap4PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Custom", new { page, name = Context.Request.Query["name"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded }.ApplyBootstrap4Style())
 
 <table class="table table-hover table-striped">
     <tr>
@@ -41,4 +40,4 @@
     }
 </table>
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Custom", new { page, name = Context.Request.Query["name"] }), new Bootstrap4PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Custom", new { page, name = Context.Request.Query["name"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded }.ApplyBootstrap4Style())

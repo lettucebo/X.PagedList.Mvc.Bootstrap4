@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using X.PagedList.Mvc.Bootstrap4.Core.Example.Models;
-using X.PagedList.Mvc.Bootstrap4.SampleData;
 
 namespace X.PagedList.Mvc.Bootstrap4.Core.Example.Controllers
 {

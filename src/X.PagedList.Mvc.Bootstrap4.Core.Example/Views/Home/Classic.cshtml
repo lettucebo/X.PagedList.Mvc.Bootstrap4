@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<X.PagedList.Mvc.Bootstrap4.SampleData.SampleModel>
 @using X.PagedList
-@using X.PagedList.Mvc
-@using X.PagedList.Mvc.Bootstrap4
 @using X.PagedList.Mvc.Bootstrap4.Core
 @using X.PagedList.Mvc.Core
 @{
@@ -11,7 +9,7 @@
 
 <hr />
 
-@Html.Partial("_LinkPartial")
+@await Html.PartialAsync("_LinkPartial")
 
 <hr />
 

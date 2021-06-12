@@ -43,9 +43,3 @@ steps:
     command: test
     projects: '**/*[Tt]est/*.csproj'
     arguments: '--configuration $(BuildConfiguration) --no-restore'
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
-  inputs:
-    command: pack
-    packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'

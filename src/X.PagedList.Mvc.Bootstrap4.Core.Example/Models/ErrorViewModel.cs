@@ -1,5 +1,3 @@
-using System;
-
 namespace X.PagedList.Mvc.Bootstrap4.Core.Example.Models
 {
     public class ErrorViewModel

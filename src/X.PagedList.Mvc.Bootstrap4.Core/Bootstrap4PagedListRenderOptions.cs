@@ -1,23 +1,15 @@
-﻿using System.Runtime.CompilerServices;
-using X.PagedList.Web.Common;
+﻿using X.PagedList.Web.Common;
 
 namespace X.PagedList.Mvc.Bootstrap4.Core
 {
-    public class Bootstrap4PagedListRenderOptions : PagedListRenderOptionsBase
+    /// <summary>
+    /// Some built-in bootstrap4 <see cref="PagedListRenderOptions"/>
+    /// </summary>
+    public class Bootstrap4PagedListRenderOptions
     {
-
-        public Bootstrap4PagedListRenderOptions()
+        private static PagedListRenderOptions GetCommonSetting()
         {
-            LiElementClasses = new[] { "page-item" };
-            PageClasses = new[] { "page-link" };
-
-            // Due to no way change Ellipses element class, try setting EllipsesElementClass but fail, so disable Ellipses
-            DisplayEllipsesWhenNotShowingAllPageNumbers = false;
-        }
-
-        private static PagedListRenderOptionsBase GetCommonSetting()
-        {
-            var option = new PagedListRenderOptionsBase()
+            var option = new PagedListRenderOptions()
             {
                 LiElementClasses = new[] { "page-item" },
                 PageClasses = new[] { "page-link" },
@@ -28,7 +20,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             return option;
         }
 
-        public static PagedListRenderOptionsBase Default
+        public static PagedListRenderOptions Default
         {
             get
             {
@@ -43,7 +35,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             }
         }
 
-        public new static PagedListRenderOptionsBase ClassicPlusFirstAndLast
+        public static PagedListRenderOptions ClassicPlusFirstAndLast
         {
             get
             {
@@ -58,7 +50,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             }
         }
 
-        public new static PagedListRenderOptionsBase Classic
+        public static PagedListRenderOptions Classic
         {
             get
             {
@@ -73,7 +65,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             }
         }
 
-        public new static PagedListRenderOptionsBase Minimal
+        public static PagedListRenderOptions Minimal
         {
             get
             {
@@ -89,7 +81,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             }
         }
 
-        public new static PagedListRenderOptionsBase PageNumbersOnly
+        public static PagedListRenderOptions PageNumbersOnly
         {
             get
             {
@@ -105,7 +97,7 @@ namespace X.PagedList.Mvc.Bootstrap4.Core
             }
         }
 
-        public new static PagedListRenderOptionsBase OnlyShowFivePagesAtATime
+        public static PagedListRenderOptions OnlyShowFivePagesAtATime
         {
             get
             {
