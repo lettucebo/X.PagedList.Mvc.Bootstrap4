@@ -60,6 +60,7 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy To Nuget.org
+        environment: 'production'
         pool:
           vmImage: 'windows-latest'
         strategy:
