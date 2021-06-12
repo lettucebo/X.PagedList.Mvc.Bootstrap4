@@ -67,9 +67,15 @@ stages:
           runOnce:
             deploy:
               steps:
+                - task: DownloadBuildArtifacts@0
+                  inputs:
+                    buildType: 'current'
+                    downloadType: 'single'
+                    artifactName: 'drop'
+                    downloadPath: '$(System.ArtifactsDirectory)'
                 - task: NuGetCommand@2
                   inputs:
                     command: 'push'
-                    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+                    packagesToPush: '$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg'
                     nuGetFeedType: 'external'
                     publishFeedCredentials: 'Nuget.org'
