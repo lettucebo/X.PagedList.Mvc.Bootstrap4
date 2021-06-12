@@ -67,10 +67,6 @@ stages:
           runOnce:
             deploy:
               steps:
-                - task: NuGetAuthenticate@0
-                  inputs:
-                    nuGetServiceConnections: 'Nuget.org'
-                
                 - task: NuGetCommand@2
                   inputs:
                     command: 'push'
