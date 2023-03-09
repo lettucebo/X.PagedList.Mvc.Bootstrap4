@@ -60,9 +60,9 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy To Nuget.org
-        environment: 'production'
+        environment: 'XPagedListMvcBootstrap4'
         pool:
-          vmImage: 'windows-latest'
+          vmImage: 'ubuntu-latest'
         strategy:
           runOnce:
             deploy:
@@ -73,6 +73,7 @@ stages:
                     downloadType: 'single'
                     artifactName: 'drop'
                     downloadPath: '$(System.ArtifactsDirectory)'
+
                 - task: NuGetCommand@2
                   inputs:
                     command: 'push'
