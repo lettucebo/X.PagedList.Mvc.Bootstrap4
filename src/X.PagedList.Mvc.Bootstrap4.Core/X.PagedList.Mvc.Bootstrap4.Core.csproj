@@ -1,19 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <Version>8.1.0</Version>
-        <AssemblyVersion>8.1.0</AssemblyVersion>
-        <FileVersion>8.1.0</FileVersion>
-        <FileVersion>8.1.0</FileVersion>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Library</OutputType>
+        <Version>8.4.5</Version>
+        <AssemblyVersion>8.4.5</AssemblyVersion>
+        <FileVersion>8.4.5</FileVersion>
+        <FileVersion>8.4.5</FileVersion>
         <Authors>Money Yu</Authors>
         <Description>X.PagedList.Mvc pager style for bootstrap 4</Description>
         <PackageProjectUrl>https://github.com/lettucebo/X.PagedList.Mvc.Bootstrap4</PackageProjectUrl>
         <PackageIconUrl>https://i.imgur.com/3xZ4Cdx.png</PackageIconUrl>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="X.PagedList.Mvc.Core" Version="8.1.0" />
+        <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.5" />
     </ItemGroup>
 
 </Project>
