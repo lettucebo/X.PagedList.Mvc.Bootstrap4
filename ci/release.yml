@@ -40,6 +40,11 @@ stages:
               projects: '**/*.csproj'
               arguments: '--configuration $(BuildConfiguration)'
 
+          - task: NuGetToolInstaller@1
+            displayName: "Use NuGet 5.x.x"
+            inputs:
+              versionSpec: "5.x.x"
+
           - task: NuGetCommand@2
             displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
             inputs:
