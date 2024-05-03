@@ -8,8 +8,6 @@
         <description>$description$</description>
         <projectUrl>$PackageProjectUrl$</projectUrl>
         <iconUrl>$PackageIconUrl$</iconUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageReadmeFile>../README.md</PackageReadmeFile>
         <dependencies>
             <group targetFramework="net6.0">
                 <dependency id="X.PagedList.Mvc.Core" version="9.1.2" />

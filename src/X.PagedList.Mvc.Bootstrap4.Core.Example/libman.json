@@ -11,7 +11,7 @@
             "destination": "wwwroot/lib/bootstrap/"
         },
         {
-            "library": "jquery-validate@1.19.3",
+            "library": "jquery-validate@1.19.5",
             "destination": "wwwroot/lib/jquery-validation/"
         },
         {
