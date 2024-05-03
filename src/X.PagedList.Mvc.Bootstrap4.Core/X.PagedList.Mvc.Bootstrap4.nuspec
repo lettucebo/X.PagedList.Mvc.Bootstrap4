@@ -8,9 +8,14 @@
         <description>$description$</description>
         <projectUrl>$PackageProjectUrl$</projectUrl>
         <iconUrl>$PackageIconUrl$</iconUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>../README.md</PackageReadmeFile>
         <dependencies>
-            <group targetFramework=".NETStandard2.0">
-                <dependency id="X.PagedList.Mvc.Core" version="8.4.5" />
+            <group targetFramework="net6.0">
+                <dependency id="X.PagedList.Mvc.Core" version="9.1.2" />
+            </group>
+            <group targetFramework="net8.0">
+                <dependency id="X.PagedList.Mvc.Core" version="9.1.2" />
             </group>
         </dependencies>
     </metadata>

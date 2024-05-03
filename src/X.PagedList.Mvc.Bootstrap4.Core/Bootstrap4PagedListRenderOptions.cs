@@ -1,4 +1,4 @@
-﻿using X.PagedList.Web.Common;
+﻿using X.PagedList.Mvc.Core;
 
 namespace X.PagedList.Mvc.Bootstrap4.Core
 {
