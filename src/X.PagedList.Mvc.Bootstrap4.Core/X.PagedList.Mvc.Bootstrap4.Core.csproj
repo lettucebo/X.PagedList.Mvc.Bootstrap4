@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="X.PagedList.Mvc.Core" Version="9.1.2" />
+        <PackageReference Include="X.Web.PagedList" Version="10.1.2" />
     </ItemGroup>
 
 </Project>
