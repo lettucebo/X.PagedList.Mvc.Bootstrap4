@@ -1,4 +1,4 @@
-namespace X.PagedList.Mvc.Bootstrap4.Core.Example.Models
+namespace X.Web.PagedList.Bootstrap4.Example.Models
 {
     public class ErrorViewModel
     {

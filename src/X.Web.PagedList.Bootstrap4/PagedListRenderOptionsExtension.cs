@@ -1,6 +1,4 @@
-﻿using X.Web.PagedList;
-
-namespace X.PagedList.Mvc.Bootstrap4.Core
+﻿namespace X.Web.PagedList.Bootstrap4.Core
 {
     public static class PagedListRenderOptionsExtension
     {

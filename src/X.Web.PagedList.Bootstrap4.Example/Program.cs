@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace X.PagedList.Mvc.Bootstrap4.Core.Example
+namespace X.Web.PagedList.Bootstrap4.Example
 {
     public class Program
     {

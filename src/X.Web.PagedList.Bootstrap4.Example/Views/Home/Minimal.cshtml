@@ -1,11 +1,12 @@
-﻿@model IEnumerable<X.PagedList.Mvc.Bootstrap4.SampleData.SampleModel>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using X.PagedList
-@using X.PagedList.Mvc.Bootstrap4.Core
 @using X.Web.PagedList
+@using X.Web.PagedList.Bootstrap4.Core
+@model IEnumerable<X.Web.PagedList.Bootstrap4.SampleData.SampleModel>
 @{
 }
 
-<h2>Classic</h2>
+<h2>Minimal</h2>
 
 <hr />
 
@@ -13,7 +14,7 @@
 
 <hr />
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Classic", new { page }), Bootstrap4PagedListRenderOptions.Classic)
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Minimal", new { page }), Bootstrap4PagedListRenderOptions.Minimal)
 
 <table class="table table-hover table-striped">
     <tr>
@@ -32,4 +33,4 @@
     }
 </table>
 
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Classic", new { page }), Bootstrap4PagedListRenderOptions.Classic)
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Minimal", new { page }), Bootstrap4PagedListRenderOptions.Minimal)

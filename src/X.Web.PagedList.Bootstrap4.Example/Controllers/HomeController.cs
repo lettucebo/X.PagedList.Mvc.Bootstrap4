@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using X.PagedList.Extensions;
 
-namespace X.PagedList.Mvc.Bootstrap4.Core.Example.Controllers
+namespace X.Web.PagedList.Bootstrap4.Example.Controllers
 {
     public class HomeController : Controller
     {

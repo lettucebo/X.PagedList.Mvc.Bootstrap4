@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace X.PagedList.Mvc.Bootstrap4.SampleData
+namespace X.Web.PagedList.Bootstrap4.SampleData
 {
     public class SampleData
     {

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace X.PagedList.Mvc.Bootstrap4.Core.Example
+namespace X.Web.PagedList.Bootstrap4.Example
 {
     public class Startup
     {
