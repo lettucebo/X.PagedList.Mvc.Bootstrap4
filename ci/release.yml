@@ -9,13 +9,12 @@ trigger:
       - refs/tags/*
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: "windows-latest"
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
+  solution: "**/*.sln"
+  buildPlatform: "Any CPU"
+  buildConfiguration: "Release"
 
 stages:
   - stage: Build
@@ -24,21 +23,21 @@ stages:
       - job: Build
         displayName: Build
         pool:
-          vmImage: 'windows-latest'
+          vmImage: "windows-latest"
 
         steps:
           - task: DotNetCoreCLI@2
             displayName: Restore
             inputs:
-              command: 'restore'
-              projects: '**/*.csproj'
+              command: "restore"
+              projects: "**/*.csproj"
 
           - task: DotNetCoreCLI@2
             displayName: Build
             inputs:
-              command: 'build'
-              projects: '**/*.csproj'
-              arguments: '--configuration $(BuildConfiguration)'
+              command: "build"
+              projects: "**/*.csproj"
+              arguments: "--configuration $(BuildConfiguration)"
 
           - task: NuGetToolInstaller@1
             displayName: "Use NuGet 5.x.x"
@@ -46,17 +45,17 @@ stages:
               versionSpec: "5.x.x"
 
           - task: NuGetCommand@2
-            displayName: 'NuGet pack X.PagedList.Mvc.Bootstrap4.Core'
+            displayName: "NuGet pack X.Web.PagedList.Bootstrap4"
             inputs:
-              command: 'pack'
-              packagesToPack: 'src/X.PagedList.Mvc.Bootstrap4.Core\X.PagedList.Mvc.Bootstrap4.Core.csproj'
+              command: "pack"
+              packagesToPack: 'src/X.Web.PagedList.Bootstrap4\X.Web.PagedList.Bootstrap4.csproj'
               includeSymbols: true
 
           - task: PublishBuildArtifacts@1
             inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
-              publishLocation: 'Container'
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+              publishLocation: "Container"
 
   - stage: Deploy
     displayName: Deploy stage
@@ -65,23 +64,23 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy To Nuget.org
-        environment: 'XPagedListMvcBootstrap4'
+        environment: "XPagedListMvcBootstrap4"
         pool:
-          vmImage: 'ubuntu-latest'
+          vmImage: "ubuntu-latest"
         strategy:
           runOnce:
             deploy:
               steps:
                 - task: DownloadBuildArtifacts@0
                   inputs:
-                    buildType: 'current'
-                    downloadType: 'single'
-                    artifactName: 'drop'
-                    downloadPath: '$(System.ArtifactsDirectory)'
+                    buildType: "current"
+                    downloadType: "single"
+                    artifactName: "drop"
+                    downloadPath: "$(System.ArtifactsDirectory)"
 
                 - task: NuGetCommand@2
                   inputs:
-                    command: 'push'
-                    packagesToPush: '$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg'
-                    nuGetFeedType: 'external'
-                    publishFeedCredentials: 'Nuget.org'
+                    command: "push"
+                    packagesToPush: "$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg"
+                    nuGetFeedType: "external"
+                    publishFeedCredentials: "Nuget.org"
