@@ -10,7 +10,7 @@
         <iconUrl>$PackageIconUrl$</iconUrl>
         <dependencies>
             <group targetFramework="net6.0,.net8.0">
-                <dependency id="X.PagedList.Mvc.Core" version="9.1.2" />
+                <dependency id="X.Web.PagedList" version="10.1.2" />
             </group>
         </dependencies>
     </metadata>
