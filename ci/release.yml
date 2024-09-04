@@ -36,7 +36,7 @@ stages:
             displayName: Build
             inputs:
               command: "build"
-              projects: "**/*.csproj"
+              projects: 'src/X.Web.PagedList.Bootstrap4\X.Web.PagedList.Bootstrap4.csproj'
               arguments: "--configuration $(BuildConfiguration)"
 
           - task: NuGetToolInstaller@1
