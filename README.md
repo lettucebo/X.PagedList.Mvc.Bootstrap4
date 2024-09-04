@@ -1,5 +1,5 @@
 # X.PagedList.Mvc.Bootstrap4
-[![Build Status](https://dev.azure.com/lettucebo/Github.Build/_apis/build/status/X.PagedList.Mvc.Bootstrap4/X.PagedList.Mvc.Bootstrap4.Build?branchName=master)](https://dev.azure.com/lettucebo/Github.Build/_build/latest?definitionId=18&branchName=master)
+[![Build Status](https://dev.azure.com/lettucebo/Github.Build/_apis/build/status%2FX.PagedList.Mvc.Bootstrap4%2FX.PagedList.Mvc.Bootstrap4.Build?branchName=master)](https://dev.azure.com/lettucebo/Github.Build/_build/latest?definitionId=18&branchName=master)
 [![Nuget](https://img.shields.io/nuget/dt/X.PagedList.Mvc.Bootstrap4?label=NuGet)](https://www.nuget.org/packages/X.PagedList.Mvc.Bootstrap4)
 
 pager style for bootstrap 4
